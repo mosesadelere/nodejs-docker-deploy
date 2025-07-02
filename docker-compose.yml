@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nodejs-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mosesade/nodejs-service:latest
+    container_name: nodejs-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - SECRET_MESSAGE=${SECRET_MESSAGE}
+    restart: unless-stopped
