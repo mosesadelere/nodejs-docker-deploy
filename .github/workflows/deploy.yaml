@@ -52,6 +52,5 @@ jobs:
         name: Push
         uses: docker/build-push-action@v6
         with:
-          context: .
           push: true
-          tags: user/nodejs-service:${{ env.SHORT_SHA }}
+          tags: mosesade/nodejs-service:${{ env.SHORT_SHA }}
