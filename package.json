@@ -5,17 +5,20 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint . --ext .js",
+    "update-deps": "npm install eslint@latest @eslint/js@latest rimraf@latest glob@latest"
   },
   "dependencies": {
+    "basic-auth": "^2.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "basic-auth": "^2.0.1"
+    "glob": "^11.0.3",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.30.1",
     "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
+    "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0"
