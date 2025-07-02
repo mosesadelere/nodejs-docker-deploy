@@ -31,7 +31,7 @@ jobs:
 
       - name: Build project
         run: |
-          node server.js || echo "Error: no test specified\" && exit 1"
+          npm start || echo "Error: no test specified\" && exit 1"
 
       - name: Build Docker Image
         run: |
