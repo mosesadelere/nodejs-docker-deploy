@@ -9,6 +9,9 @@ jobs:
   build-deploy:
     name: Unit testing
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - 
