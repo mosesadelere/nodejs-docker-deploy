@@ -1,0 +1,13 @@
+image:
+  repository: mosesade/nodejs-service:${{ env.SHORT_SHA }}
+  tag: fc0b467
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 2222
+ingress:
+  enabled: false
+serviceAccount:
+  enabled: false
+autoscaling:
+  enabled: false
