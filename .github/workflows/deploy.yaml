@@ -103,7 +103,7 @@ jobs:
       -
         name: Update Helm chart with new image tag
         run: |
-          sed -i "s/tag:.*/tsg: ${{ env.SHORT_SHA }}/" ./nodejs-deploy/values.yaml
+          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ./nodejs-deploy/values.yaml
           git add ./nodejs-deploy/values.yaml
           git commit -m "Updated image tag to ${{ env.SHORT_SHA }}"
           git push
