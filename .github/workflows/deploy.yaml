@@ -10,8 +10,7 @@ jobs:
     name: Unit testing
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      issues: write
+      contents: write
 
     steps:
       - 
