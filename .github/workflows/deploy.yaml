@@ -107,6 +107,7 @@ jobs:
         name: Update Helm with Github SHA
         run: |
           sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" /nodejs-deploy/values.yaml
+          pwd
 
       -
         name: Update Helm chart with new image tag
