@@ -107,13 +107,13 @@ jobs:
         name: Update Helm with Github SHA
         run: |
           pwd
-          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" /nodejs-deploy/values.yaml
+          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ~/nodejs-deploy/values.yaml
     
       -
         name: Update Helm chart with new image tag
         run: |
           ls -la
-          git add /nodejs-deploy/values.yaml
+          git add ~/nodejs-deploy/values.yaml
           if git diff --cached --quiet; then
             echo "No changess to commit."
           else
