@@ -107,3 +107,4 @@ jobs:
           git add ./nodejs-deploy/values.yaml
           git commit -m "Updated image tag to ${{ env.SHORT_SHA }}"
           git push
+        
