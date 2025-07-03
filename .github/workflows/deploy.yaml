@@ -100,14 +100,23 @@ jobs:
       -
         name: Configure Git Authour
         run: |
-          git config --local user.email "moses.adelere@gmail.com"
-          git config --local user.name  "Moses A."
+          git config --global user.email "moses.adelere@gmail.com"
+          git config --global user.name  "Moses A."
+
+      -
+        name: Update Helm with Github SHA
+        run: |
+          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ./nodejs-deploy/values.yaml
 
       -
         name: Update Helm chart with new image tag
         run: |
-          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ./nodejs-deploy/values.yaml
+          ls -la
           git add ./nodejs-deploy/values.yaml
-          git commit -m "Updated image tag to ${{ env.SHORT_SHA }}"
-          git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/mosesadelere/nodejs-docker-deploy.git
+          if git diff --cached --quiet; then
+            echo "No changess to commit."
+          else
+            git commit -m "Updated image tag to ${{ env.SHORT_SHA }}"
+            git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/mosesadelere/nodejs-docker-deploy.git
+          fi
         
