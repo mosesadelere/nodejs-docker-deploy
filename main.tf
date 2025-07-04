@@ -30,7 +30,12 @@ resource "kind_cluster" "default" {
         host_port      = 443
       }
       kubeadm_config_patches = [
-        "kind: InitConfiguration\nnodeRegistration:\n kubeletExtraArgs:\n node-labels:\"ingress-ready=\"\n"
+        <<EOF
+          kind: InitConfiguration
+          nodeRegistration:
+            kubeletExxtraArgs:
+              node-labels:  "ingress-ready=true
+        EOF
       ]
     }
     node {

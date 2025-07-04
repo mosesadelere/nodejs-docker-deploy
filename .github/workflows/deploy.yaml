@@ -94,7 +94,12 @@ jobs:
 
       -
         name: Get Nodes
-        run: kubectl get all -A
+        run: |
+          export KUBECONFIG=/home/runner/.kube/config
+          kuberctl cluster-info
+          kubectl get nodes
+          kubectl get all -A
+          helm list -A
 
       -
         name: Configure Git Authour

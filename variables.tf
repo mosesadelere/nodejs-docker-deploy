@@ -7,7 +7,7 @@ variable "kind_cluster_name" {
 variable "kind_cluster_config_path" {
   type        = string
   description = "Location where cluster's kubeconfig resides."
-  default     = "~/.kube/config"
+  default     = "/home/runner/.kube/config"
 }
 
 variable "ingress_nginx_namespace" {
