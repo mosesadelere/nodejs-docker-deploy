@@ -1,4 +1,14 @@
 # nodejs-docker-deploy
+Project: Automated Kubernetes Deployment Pipeline with Node.js App 
+Overview 
+This project demonstrates an end-to-end CI/CD pipeline for deploying a Dockerized Node.js application to a local Kubernetes cluster using modern DevOps tools. The pipeline includes: 
+•	Infrastructure Provisioning : Automates the creation of a local Kubernetes cluster using Kind .
+•	Helm Chart Management : Deploys the NGINX Ingress Controller via Helm .
+•	CI/CD Automation : Uses GitHub Actions for continuous integration and deployment.
+•	GitOps : Integrates Argo CD for declarative application management.
+•	Dockerization : Builds and pushes Docker images to GitHub Container Registry.
+
+
 Project Walkthrough
 1. Clone the repo
 
