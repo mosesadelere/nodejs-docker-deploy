@@ -96,7 +96,7 @@ jobs:
         name: Get Nodes
         run: |
           export KUBECONFIG=/home/runner/.kube/config
-          kuberctl cluster-info
+          kubectl cluster-info
           kubectl get nodes
           kubectl get all -A
           helm list -A
