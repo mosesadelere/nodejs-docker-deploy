@@ -1,6 +1,6 @@
 image:
   repository: mosesade/nodejs-service:${{ env.SHORT_SHA }}
-  tag: c74067f
+  tag: b202bad
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
