@@ -34,7 +34,7 @@ resource "kind_cluster" "default" {
           kind: InitConfiguration
           nodeRegistration:
             kubeletExxtraArgs:
-              node-labels:  "ingress-ready=true
+              node-labels:  "ingress-ready=true"
         EOF
       ]
     }
