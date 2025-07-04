@@ -64,7 +64,7 @@ resource "helm_release" "ingress_nginx" {
       controller:
         hostPort:
           enabled: true
-        terminationgracePeriodSeconds: 0
+        terminationGracePeriodSeconds: 0
         service:
           type: NodePort
         watchIngressWithoutClass: true
