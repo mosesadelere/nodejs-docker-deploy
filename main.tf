@@ -44,16 +44,47 @@ resource "kind_cluster" "default" {
   }
 }
 
+resource "time_sleep" "wait_for_cluster" {
+  depends_on      = [kind_cluster.default]
+  create_duration = "60s"
+}
+
 resource "helm_release" "ingress_nginx" {
   name       = "ingress-nginx"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
   version    = var.ingress_nginx_helm_version
+  timeout    = 600
 
   namespace        = var.ingress_nginx_namespace
   create_namespace = true
 
-  values = [file("nginx_ingress_values.yaml")]
+  values = [
+    <<EOF
+      controller:
+        hostPort:
+          enabled: true
+        terminationgracePeriodSeconds: 0
+        service:
+          type: NodePort
+        watchIngressWithoutClass: true
+        nodeSelector:
+          ingress-ready: "true"
+        tolerations:
+        -
+          effect: "NoSchedule"
+          key: "node-role.kubernetes.io/master"
+          operator: "Equal"
+        -
+          effect: "NoSchedule"
+          key: "node-role.kubernetes.io/control-plane"
+          operator: "Equal"
+        publishService:
+          enabled: false
+        extraArgs:
+          publish-status-address: "localhost"
+    EOF
+  ]
 
-  depends_on = [kind_cluster.default]
+  depends_on = [time_sleep.wait_for_cluster]
 }
