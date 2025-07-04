@@ -94,7 +94,7 @@ jobs:
 
       -
         name: Get Nodes
-        run: kubectl get nodes
+        run: kubectl get all -A
 
       -
         name: Configure Git Authour
