@@ -14,6 +14,14 @@ terraform {
       source  = "hashicorp/helm"
       version = "2.10.1"
     }
+    local = {
+      source = "hashicorp/local"
+      version = "~> 2.5.3"
+    }
+    time = {
+      source = "hashicorp/time"
+      version = "~> 0.13.1"
+    }
   }
 
   required_version = ">=1.0.0"
