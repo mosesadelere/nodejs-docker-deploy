@@ -86,11 +86,6 @@ resource "helm_release" "ingress_nginx" {
     EOF
   ]
 
-  depends_on = [time_sleep.wait_for_cluster]
+  depends_on = [kind_cluster.default, time_sleep.wait_for_cluster]
 }
 
-resource "local_file" "kubeconfig_dir" {
-  filename   = "/home/runner/.kube/config"
-  content    = ""
-  depends_on = [time_sleep.wait_for_cluster]
-}
