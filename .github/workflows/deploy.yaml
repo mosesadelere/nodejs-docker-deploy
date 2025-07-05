@@ -81,8 +81,6 @@ jobs:
         id: validate
         run: |
           terraform validate
-          mkdir -p /home/runner/.kube
-          ls -la /home/runner/.kube || echo ".kube does not exist"
           ls -la /home/runner
           pwd
       
