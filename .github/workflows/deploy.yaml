@@ -81,7 +81,7 @@ jobs:
         id: validate
         run: |
           terraform validate
-          ls -la /home/runner
+          ls -la /home/runner/work
           pwd
       
       -
