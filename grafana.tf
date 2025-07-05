@@ -5,7 +5,7 @@ resource "helm_release" "grafana" {
   namespace        = "monitoring"
   create_namespace = "true"
   version          = "6.53.0"
-  depends_on       = [helm_release.prometheus]
+  depends_on       = [helm_release.prometheus, time_sleep.wait_for_cluster]
 
 
   values = [
