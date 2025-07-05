@@ -74,7 +74,7 @@ jobs:
       -
        name: Terraform Format
        id: fmt
-        run: terraform fmt -check
+       run: terraform fmt -check
 
       -
         name: Terraform Validate
@@ -114,3 +114,15 @@ jobs:
           pwd
           ls -la
           sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ./nodejs-deploy/values.yaml
+    
+      # -
+      #   name: Update Helm chart with new image tag
+      #   run: |
+      #     git add ./nodejs-deploy/values.yaml
+      #     if git diff --cached --quiet; then
+      #       echo "No changess to commit."
+      #     else
+      #       git commit -m "Updated image tag to ${{ env.SHORT_SHA }}"
+      #       git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/mosesadelere/nodejs-docker-deploy.git
+      #     fi
+        
