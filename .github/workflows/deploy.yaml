@@ -81,8 +81,8 @@ jobs:
         id: validate
         run: |
           terraform validate
-          ls -la /home/runner/work
-          pwd
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/configchmod 600 ~/.kube/config
       
       -
         name: Terraform Plan
