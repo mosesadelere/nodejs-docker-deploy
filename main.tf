@@ -94,7 +94,3 @@ resource "local_file" "kubeconfig_dir" {
   content = ""
   depends_on = [ time_sleep.wait_for_cluster ]
 }
-
-resource "time_sleep" "wait_for_cluster" {
-  create_duration = "60s"
-}
