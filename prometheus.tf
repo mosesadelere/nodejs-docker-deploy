@@ -5,7 +5,7 @@ resource "helm_release" "prometheus" {
   version          = var.prometheus_version
   namespace        = "monitoring"
   create_namespace = "true"
-  timeout = 600
+  timeout          = 600
 
   values = [
     <<EOF

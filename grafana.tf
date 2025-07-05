@@ -4,8 +4,8 @@ resource "helm_release" "grafana" {
   repository       = "https://grafana.github.io/helm-charts"
   namespace        = "monitoring"
   create_namespace = "true"
-  version = "6.53.0"
-  depends_on = [ helm_release.prometheus ]
+  version          = "6.53.0"
+  depends_on       = [helm_release.prometheus]
 
 
   values = [
