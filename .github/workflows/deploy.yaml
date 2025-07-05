@@ -83,6 +83,7 @@ jobs:
           terraform validate
           mkdir -p /home/runner/.kube
           ls -la /home/runner/.kube || echo ".kube does not exist"
+          pwd
       
       -
         name: Terraform Plan
