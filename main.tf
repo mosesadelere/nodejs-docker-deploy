@@ -90,7 +90,7 @@ resource "helm_release" "ingress_nginx" {
 }
 
 resource "local_file" "kubeconfig_dir" {
-  filename = "/home/runner/.kube/config"
-  content = ""
-  depends_on = [ time_sleep.wait_for_cluster ]
+  filename   = "/home/runner/.kube/config"
+  content    = ""
+  depends_on = [time_sleep.wait_for_cluster]
 }
