@@ -15,11 +15,11 @@ terraform {
       version = "2.10.1"
     }
     local = {
-      source = "hashicorp/local"
+      source  = "hashicorp/local"
       version = "~> 2.5.3"
     }
     time = {
-      source = "hashicorp/time"
+      source  = "hashicorp/time"
       version = "~> 0.13.1"
     }
   }
