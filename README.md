@@ -62,3 +62,4 @@ Project Walkthrough
 6. Access the App
 
     kubectl port-forward svc/nodejs-app 3000:3000
+    

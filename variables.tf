@@ -22,4 +22,22 @@ variable "ingress_nginx_helm_version" {
   default     = "4.7.1"
 }
 
+variable "prometheus_name" {
+  type        = string
+  description = "Prometheus name"
+  default     = "prometheus"
+}
+
+variable "prometheus_version" {
+  type        = string
+  description = "Version number for prometheus"
+  default     = "15.0.0"
+}
+
+variable "prometheus_repo" {
+  type    = string
+  default = "https://prometheus-community.github.io/helm-charts"
+}
+
+
 
