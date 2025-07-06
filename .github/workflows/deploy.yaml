@@ -110,17 +110,17 @@ jobs:
         working-directory: ./manifest
         run: terraform apply -auto-approve
 
-      -
-       name: Export KUBECONFIG to env
-       run: echo "KUBECONFIG=~/.kube/config" >> ${GITHUB_ENV}
+      # -
+      #  name: Export KUBECONFIG to env
+      #  run: echo "KUBECONFIG=~/.kube/config" >> ${GITHUB_ENV}
 
-      -
-        name: Get Nodes
-        run: |
-          kubectl get nodes
-          kubectl get all -A
-          helm list -A
-          helm status ingress-nginx -n ingress-nginx
+      # -
+      #   name: Get Nodes
+      #   run: |
+      #     kubectl get nodes
+      #     kubectl get all -A
+      #     helm list -A
+      #     helm status ingress-nginx -n ingress-nginx
 
       -
         name: Configure Git Authour
