@@ -38,6 +38,7 @@ Project Walkthrough
     cd app
     npm install
     node index.js  # Runs on http://localhost:3000
+    for authentication http://localhost:3000/secret
 
 4. Build & push Docker image to any registry of choice
     
