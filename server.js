@@ -21,7 +21,7 @@ function authMiddleware(req, res, next) {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('How far?');
 });
 
 app.get('/secret', authMiddleware, (req, res) => {
